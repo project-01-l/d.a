@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rede Escuta | Imagem usada sem consentimento: protocolo e denúncia</title>
+  <meta name="description" content="Protocolo de ação e denúncia anônima quando sua imagem é usada sem consentimento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="#" aria-label="Rede Escuta"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M4 6h20v13H13l-5 4v-4H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Rede Escuta</span></a>
+    <div>
+      <h1 class="sr">Rede Escuta, protocolo diante do uso de imagem sem consentimento</h1>
+      <p class="sub">Orientação e denúncia anônima quando sua imagem é usada sem permissão. Não pedimos nome, e-mail nem telefone.</p>
+    </div>
+    <nav class="help" aria-label="Ajuda imediata">
+      <p>Precisa falar com alguém agora?</p>
+      <a href="tel:188"><b>188</b><span>CVV, apoio emocional 24h</span></a>
+      <a href="tel:100"><b>100</b><span>Disque Direitos Humanos</span></a>
+      <a href="tel:190" class="urgent"><b>190</b><span>Perigo imediato</span></a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <section class="protocol">
+      <h2>Protocolo: usaram sua imagem sem consentimento</h2>
+      <ol class="steps">
+        <li><strong>Não reenvie a imagem.</strong> Se for uma imagem íntima, encaminhar também é crime.</li>
+        <li><strong>Guarde as provas.</strong> Faça prints com data, link e nome do perfil antes que apaguem.</li>
+        <li><strong>Peça a remoção na plataforma.</strong> Use a opção de denunciar imagem publicada sem permissão.</li>
+        <li><strong>Conte a um adulto de confiança</strong> e avise a escola.</li>
+        <li><strong>Registre a denúncia</strong> abaixo, na SaferNet ou na delegacia.</li>
+      </ol>
+      <p class="law">Divulgar imagem íntima sem consentimento é crime no Brasil (art. 218-C do Código Penal).</p>
+    </section>
+
+    <form id="form-denuncia" class="form" novalidate>
+      <h2>Registrar denúncia anônima</h2>
+      <div class="field">
+        <label for="relato" class="sr">Descreva a situação</label>
+        <textarea id="relato" name="relato" rows="8" maxlength="2000" placeholder="Conte o que foi divulgado e onde. Não cole a imagem nem dados que identifiquem você." aria-describedby="contador"></textarea>
+        <p class="small" id="contador">0 de 2000</p>
+        <p class="error" id="erro-relato" role="alert" hidden>Escreva pelo menos 30 caracteres para que o caso possa ser entendido.</p>
+      </div>
+
+      <fieldset>
+        <legend>Que imagem foi usada?</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="tipo" value="Foto"><span>Foto</span></label>
+          <label><input type="checkbox" name="tipo" value="Vídeo"><span>Vídeo</span></label>
+          <label><input type="checkbox" name="tipo" value="Print de conversa"><span>Print de conversa</span></label>
+          <label><input type="checkbox" name="tipo" value="Montagem ou IA"><span>Montagem ou imagem feita por IA</span></label>
+          <label><input type="checkbox" name="tipo" value="Imagem íntima"><span>Imagem íntima</span></label>
+        </div>
+        <p class="error" id="erro-tipo" role="alert" hidden>Marque pelo menos uma opção.</p>
+      </fieldset>
+
+      <div class="field">
+        <label for="plataforma">Onde aconteceu?</label>
+        <select id="plataforma" name="plataforma">
+          <option value="">Prefiro não dizer</option>
+          <option>WhatsApp</option><option>Instagram</option><option>TikTok</option>
+          <option>Discord</option><option>Jogos online</option><option>Outro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="noar">A imagem ainda está no ar?</label>
+        <select id="noar" name="noar">
+          <option value="">Não sei</option>
+          <option>Sim</option><option>Não</option>
+        </select>
+      </div>
+
+      <button class="btn" type="submit">Enviar denúncia</button>
+      <p class="tip">Não envie a imagem neste formulário. Descreva o que foi divulgado e onde.</p>
+    </form>
+
+    <div id="confirmacao" class="confirm" tabindex="-1" hidden>
+      <h2>Recebemos seu relato.</h2>
+      <p>Este código identifica seu caso. Guarde-o: não há como recuperá-lo depois.</p>
+      <p class="code" id="codigo"></p>
+      <div class="actions">
+        <button class="btn" id="copiar" type="button">Copiar código</button>
+        <button class="btn btn--line" id="nova" type="button">Nova denúncia</button>
+      </div>
+    </div>
+
+    <p class="foot">Projeto escolar de conscientização. Não substitui o atendimento de profissionais ou das autoridades.</p>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
